@@ -2,6 +2,7 @@ import java.util.*;
 
 /**
  * Created by Administrator on 2016/7/12.
+ * 该类用于保存商品的固有信息
  */
 public class ProductList {
     private static ProductList single = null;

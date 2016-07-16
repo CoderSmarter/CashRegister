@@ -20,4 +20,19 @@ public class CashRegisterTest {
         ProductInfo one_item_info = list.getProductItemInfo("ITEM000005");
         assertTrue(one_item_info.getName().equals("牙膏"));
     }
+
+    //测试PurchaseList类
+    @org.junit.Test
+    public void should_return_purchaselist() {
+        PurchaseList list = new PurchaseList();
+        list.AddPurchaseListItem("ITEM000001");
+        list.AddPurchaseListItem("ITEM000002-2");
+        list.AddPurchaseListItem("ITEM000005-3");
+        list.ParsePurchaseList();
+        Map<String, PurchaseItem> returnlist = list.getPurchaseList();
+        Collection<PurchaseItem> valueslist = returnlist.values();
+        Iterator iterator = valueslist.iterator();
+        PurchaseItem item = (PurchaseItem) iterator.next();
+        assertTrue(item.getIteminfo().getBarcode().equals("ITEM000001"));
+    }
 }
