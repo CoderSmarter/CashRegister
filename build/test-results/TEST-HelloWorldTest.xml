@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HelloWorldTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-07-16T08:57:11" hostname="4V5I5DLSZGGNODW" time="0.012">
-  <properties/>
-  <testcase name="should_return_productinfo_ProductList" classname="HelloWorldTest" time="0.008"/>
-  <testcase name="should_return_discount_itemcount" classname="HelloWorldTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
