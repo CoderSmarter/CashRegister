@@ -1,0 +1,21 @@
+group 'com.thoughtworks'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    unitTest {
+        java.srcDirs = ['src/test/java']
+    }
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
