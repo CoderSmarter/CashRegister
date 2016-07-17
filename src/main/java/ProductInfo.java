@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * Created by Administrator on 2016/7/12.
+ * Created by Administrator on 2016/7/17.
  */
 public class ProductInfo {
     private String barcode;

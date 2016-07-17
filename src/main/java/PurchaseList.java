@@ -51,11 +51,18 @@ public class PurchaseList {
             olditem.setItemnum(olditem.getItemnum() + productitemnum);
             //TODO:设置购物清单中每个条目的价格
         }
+
+
     }
 
     public void ParsePurchaseList() {           //分析原始购物清单的所有条目
         for (int i = 0; i < purchase_list_primary.size(); i++) {
             ParseOneItem(i);
+        }
+
+        Discount discount = Discount.Initial();
+        for (PurchaseItem item : purchase_list.values()) {
+            discount.CalculatePrice(item);
         }
     }
 
