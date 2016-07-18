@@ -124,7 +124,7 @@ public class Discount {
             case DISCOUNT:
             {
                 item.setRealprice(itemnum * price);
-                item.setDiscountprice(itemnum * price * 0.95);
+                item.setDiscountprice(itemnum * price * 0.05);
                 break;
             }
             case BUYTWOGIVEONE:

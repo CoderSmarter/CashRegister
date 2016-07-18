@@ -69,4 +69,14 @@ public class PurchaseList {
     public Map<String, PurchaseItem> getPurchaseList() {
         return purchase_list;
     }
+
+    //判断商品列表是否有属于买二赠一的商品
+    public boolean HasBuyTwoGiveOneType() {
+        Discount discount = Discount.Initial();
+        for (PurchaseItem item : purchase_list.values()) {
+            PromotionType type = discount.IsPromotion(item.getIteminfo().getBarcode());
+            if (type == PromotionType.BUYTWOGIVEONE) return true;
+        }
+        return false;
+    }
 }

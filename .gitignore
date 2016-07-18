@@ -3,3 +3,4 @@ gradlew.bat
 out/
 .idea/
 build/
+.gradle/
