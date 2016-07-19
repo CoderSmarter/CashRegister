@@ -48,15 +48,15 @@ public class App {
         System.out.println("***<没钱赚商店>购物清单***");
         double totalprice = 0;
         double totaldiscountprice = 0;
+
         for (PurchaseItem iteminfo : purchase_list.values()) {               //输出各条商品的信息
             PromotionType type = discount.IsPromotion(iteminfo.getIteminfo().getBarcode());
-            System.out.print("名称：" + iteminfo.getIteminfo().getName() +
-                    "，数量：" + iteminfo.getItemnum() + iteminfo.getIteminfo().getUnit() +
-                    "，单价：" + iteminfo.getIteminfo().getPrice() + "（元）" +
-                    "，小计：" + (iteminfo.getRealprice() - iteminfo.getDiscountprice()) + "（元）");
+            System.out.printf("名称：%s，数量：%d%s，单价：%.2f（元），小计：%.2f（元）", iteminfo.getIteminfo().getName() ,
+                    iteminfo.getItemnum(), iteminfo.getIteminfo().getUnit(), iteminfo.getIteminfo().getPrice(),
+                    (iteminfo.getRealprice() - iteminfo.getDiscountprice()));
             if (type == PromotionType.DISCOUNT){
                 if (iteminfo.getDiscountprice() != 0)
-                    System.out.print("，优惠：" + iteminfo.getDiscountprice() + "（元）");
+                    System.out.printf("，优惠：%.2f（元）", iteminfo.getDiscountprice());
             }
             System.out.println();
             totalprice += iteminfo.getRealprice() - iteminfo.getDiscountprice();
@@ -77,9 +77,9 @@ public class App {
             }
             System.out.println("------------------------");
         }
-        System.out.print("总计：" + totalprice + "（元）");
+        System.out.printf("总计：%.2f（元）", totalprice);
         if (totaldiscountprice != 0) {
-            System.out.println("，优惠：" + totaldiscountprice + "（元）");
+            System.out.printf("，优惠：%.2f（元）\n", totaldiscountprice);
         }
     }
 }

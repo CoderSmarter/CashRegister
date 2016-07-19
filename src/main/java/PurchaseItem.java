@@ -7,6 +7,12 @@ public class PurchaseItem {
     private double realprice;
     private double discountprice;
 
+    public void PurchaseItem() {
+        itemnum = 0;
+        realprice = 0;
+        discountprice = 0;
+    }
+
     public ProductInfo getIteminfo() {
         return iteminfo;
     }

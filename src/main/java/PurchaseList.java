@@ -45,17 +45,17 @@ public class PurchaseList {
             PurchaseItem newpurchaseitem = new PurchaseItem();
             newpurchaseitem.setIteminfo(list.getProductItemInfo(barcode));
             newpurchaseitem.setItemnum(productitemnum);
-            //TODO:设置购物清单中每个条目的价格
             purchase_list.put(barcode, newpurchaseitem);
         } else {                         //编号对应的商品信息存在，更新商品信息
             olditem.setItemnum(olditem.getItemnum() + productitemnum);
-            //TODO:设置购物清单中每个条目的价格
         }
 
 
     }
 
     public void ParsePurchaseList() {           //分析原始购物清单的所有条目
+        purchase_list.clear();          //更新商品购物清单前先清空
+
         for (int i = 0; i < purchase_list_primary.size(); i++) {
             ParseOneItem(i);
         }
